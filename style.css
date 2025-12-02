@@ -1,0 +1,98 @@
+/* Global style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+/* Calculator container (wrapper) */
+.calculator {
+    width: 350px;
+}
+
+/* Display */
+input {
+    width: 350px;
+    height: 120px;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: right;
+    font-size: 3.4rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Each row of buttons */
+body > div {
+    width: 350px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+/* All buttons */
+button {
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+/* Light grey buttons (AC, DEL, %) */
+body > div:nth-of-type(2) button:nth-child(-n+3) {
+    background: #a6a6a6;
+    color: black;
+    font-weight: 600;
+}
+
+/* All operator buttons in the right column */
+body > div button:nth-child(4) {
+    background: #ff9500;
+    color: white;
+    font-weight: 600;
+}
+
+/* Number buttons (dark grey) */
+button {
+    background: #333333;
+    color: white;
+}
+
+/* Press effect */
+button:active {
+    transform: scale(0.90);
+    filter: brightness(1.2);
+}
+
+/* Special case: last row 00, 0, ., = */
+body > div:last-of-type button {
+    border-radius: 50%;
+}
+
+/* Make "00" and "0" normal round buttons */
+body > div:last-of-type button:nth-child(1),
+body > div:last-of-type button:nth-child(2),
+body > div:last-of-type button:nth-child(3) {
+    background: #333;
+}
+
+/* "=" button (last) */
+body > div:last-of-type button:last-child {
+    background: #ff9500;
+    color: white;
+    font-weight: 600;
+}
